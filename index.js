@@ -18,11 +18,10 @@ import routes from './config/routes';
 
 const initialState = {
   // You can add any initial state you want to app to start with here...
-  counter: 20
 };
 
 // Create our store with the initial state
-const initialStore = store(initialState);
+export const initialStore = store(initialState);
 
 // Render out the root component with the redux provider and debug panel
 render(
@@ -30,9 +29,6 @@ render(
     <Provider store={ initialStore }>
       <ReduxRouter routes={ routes } />
     </Provider>
-    <DebugPanel top right bottom>
-      <DevTools store={ initialStore } monitor={ LogMonitor } />
-    </DebugPanel>
   </div>,
   document.getElementById('root')
 );

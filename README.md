@@ -1,4 +1,3 @@
-
 # React Redux Skeleton
 
 This project uses [react](https://github.com/facebook/react), [redux](https://github.com/rackt/redux) and [redux-router](https://github.com/rackt/redux-router) as it's basis and forms a skeleton around these tools to allow you to get your app started quickly and easily.

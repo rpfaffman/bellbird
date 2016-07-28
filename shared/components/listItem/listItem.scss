@@ -1,0 +1,43 @@
+.default {
+  display: flex;
+  flex-direction: row;
+  margin: 1% 5%;
+  font-size: 3vw;
+  padding: 1% 0;
+}
+
+.details {
+  align-self: center;
+  padding: 0 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 40vw;
+  align-self: center;
+  justify-content: center;
+}
+
+.artist {
+  font-weight: 500;
+}
+
+.thumbnail {
+  height: 5.7vw;
+  min-height: 16vw;
+}
+
+.title {
+  text-overflow: ellipsis;
+  opacity: 0.7;
+  font-size: 3.4vw;
+  flex: 0 0 3.86vw;
+  width: 33vw;
+  overflow: hidden;
+}
+
+.btnAdd {
+  margin-left: auto;
+  cursor: pointer;
+  height: 32px;
+  width: 34px;
+  align-self: center;
+}
