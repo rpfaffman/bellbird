@@ -11,6 +11,7 @@ import createHistory from 'history/lib/createBrowserHistory';
 
 import rootReducer from './reducers';
 
+
 const createStoreWithMiddleware = compose(
   applyMiddleware(thunk),
   reduxReactRouter({ createHistory }),

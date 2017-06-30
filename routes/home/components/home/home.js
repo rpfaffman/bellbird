@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-import { Wrapper } from 'components/wrapper';
-import { Search } from 'components/search';
-
-
 export class Home extends Component {
+  componentDidMount() {
+    alert('okayokay');
+  }
+
   render() {
     return (
       <div>
-        <Search />
+        <h1>home</h1>
       </div>
     );
   }

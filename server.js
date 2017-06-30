@@ -21,7 +21,7 @@ app.use(webpackHotMiddleware(compiler));
 app.use(bodyParser.json());
 
 
-app.get('/alarms', function(req, res) {
+app.get('/api/alarms', function(req, res) {
   db.alarmsIndex()
     .then(function(alarms) {
       res.status(200).json(alarms);
@@ -31,8 +31,8 @@ app.get('/alarms', function(req, res) {
     });
 });
 
-app.post('/alarms', function(req, res) {
-  db.alarmsCreate({ content: req.body.content })
+app.post('/api/alarms', function(req, res) {
+  db.alarmsCreate({ content: req.body.content.toUpperCase() }) // enforce uppercase
     .then(function(alarm) {
       res.status(200).json(alarm);
     })
@@ -41,7 +41,7 @@ app.post('/alarms', function(req, res) {
     });
 });
 
-app.post('/upvotes', function(req, res) {
+app.post('/api/upvotes', function(req, res) {
   db.upvotesCreate({ alarmId: req.body.alarm_id })
     .then(function(upvote) {
       res.status(200).json(upvote);
@@ -50,7 +50,6 @@ app.post('/upvotes', function(req, res) {
       res.status(500).send(err.message)
     });
 });
-
 
 app.use(function(req, res) {
   res.sendFile(__dirname + '/index.html');
