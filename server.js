@@ -8,6 +8,8 @@ var app = new require('express')();
 var port = process.env.PORT || 8080;
 var compiler = webpack(config);
 
+var sendPushNotification = require('./lib/pushNotification');
+
 var db = require('./lib/db.js');
 db.migrate();
 
@@ -34,6 +36,7 @@ app.get('/api/alarms', function(req, res) {
 app.post('/api/alarms', function(req, res) {
   db.alarmsCreate({ content: req.body.content.toUpperCase() }) // enforce uppercase
     .then(function(alarm) {
+      sendPushNotification(alarm);
       res.status(200).json(alarm);
     })
     .catch(function(err) {

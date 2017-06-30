@@ -35,6 +35,7 @@ class App extends Component {
   render () {
     return (
       <div>
+        <h1>Bellbird</h1>
         {this.renderAlarmForm()}
         {this.renderAlarms()}
       </div>
@@ -58,6 +59,7 @@ class App extends Component {
       <input
         ref={ref => this.input = ref} type="text"
         onKeyDown={this.onInputKeyDown}
+        placeholder={'Post an alarm'}
       />
     )
   }
